@@ -1,0 +1,20 @@
+<?php
+
+$title = 'Login';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<div class="login">
+    <p style="color:#FF0000"><?php echo $this->errorMessage; ?></p>
+   <?php
+        $form = $this->form;
+        $form->setAttribute('action','/user/login');
+        $form->prepare();
+        echo $this->form()->openTag($form) . "\n";
+        echo $this->formRow($form->get('email')) . "\n";
+        echo $this->formRow($form->get('password')) . "<br/>\n";
+        echo $this->formRow($form->get('submit')) . "\n";
+        echo $this->form()->closeTag($form) . "\n";
+   ?>
+</div>
+
